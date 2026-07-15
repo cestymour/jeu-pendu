@@ -1,9 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>🎮 Jeu du Pendu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <!-- SEO & description -->
+  <title>🎭 Jeu du Pendu</title>
+  <meta name="description" content="Un jeu du pendu moderne, bilingue FR/EN, avec catégories et difficultés.">
+  <meta name="author" content="Pendu App">
+  <meta name="keywords" content="pendu, jeu, hangman, français, anglais, mobile">
+
+  <!-- Theme color (dark) -->
+  <meta name="theme-color" content="#0d0d1a">
+
+  <!-- PWA : pas de barre de navigateur sur iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pendu">
+
+  <!-- Open Graph (partage réseaux sociaux) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="🎭 Jeu du Pendu">
+  <meta property="og:description" content="Un jeu du pendu moderne, bilingue FR/EN, avec catégories et difficultés.">
+  <meta property="og:image" content="./icons/icon-512.png">
+
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Icône classique navigateur -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-96.png">
+  <link rel="shortcut icon" href="./icons/icon-96.png">
+
+  <!-- Icônes Apple Touch -->
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./icons/icon-128.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-192.png">
+
+  <!-- Enregistrement du Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./sw.js")
+          .then(reg => console.log("[PWA] Service Worker enregistré :", reg.scope))
+          .catch(err => console.warn("[PWA] Échec de l'enregistrement :", err));
+      });
+    }
+  </script>
+
 <style>
   :root {
     --bg: #0d0d1a;
