@@ -3,7 +3,7 @@
   "name": "Jeu du Pendu",
   "short_name": "Pendu",
   "description": "Un jeu du pendu moderne, bilingue, avec plusieurs catégories et difficultés.",
-  "start_url": "./",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
